@@ -22,18 +22,18 @@ const url = "https://jsonplaceholder.typicode.com/users";
 //     console.error("Gagal mengambil email: ", err);
 //   });
 
-fetch(url).then((response) => {
-  response.json().then((data) => {
-    const arr = [];
-    data.forEach((user) => {
-      const email = user.email;
-      const lowerEmail = email.toLowerCase();
+// fetch(url).then((response) => {
+//   response.json().then((data) => {
+//     const arr = [];
+//     data.forEach((user) => {
+//       const email = user.email;
+//       const lowerEmail = email.toLowerCase();
 
-      arr.push(lowerEmail);
-    });
-    console.log(arr);
-  });
-});
+//       arr.push(lowerEmail);
+//     });
+//     console.log(arr);
+//   });
+// });
 
 // async function getEmail() {
 //   try {
@@ -50,3 +50,72 @@ fetch(url).then((response) => {
 //   }
 // }
 // getEmail();
+
+// fetch(url)
+//   .then((response) => {
+//     if (!response.ok) {
+//       console.error("Gagal mengambil data.");
+//     }
+
+//     return response.json();
+//   })
+//   .then((data) => {
+//     const emails = [];
+//     const hurufBesar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     const hurugKecil = "abcdefghijklmnopqrstuvwxyz";
+
+//     for (let i = 0; i < data.length; i++) {
+//       const email = data[i].email;
+//       let emailBaru = "";
+
+//       for (let j = 0; j < email.length; j++) {
+//         let karakter = email[j];
+
+//         for (let k = 0; k < hurufBesar.length; k++) {
+//           if (karakter === hurufBesar[k]) {
+//             karakter = hurugKecil[k];
+//             break;
+//           }
+//         }
+//         emailBaru += karakter;
+//       }
+//       emails[emails.length] = emailBaru;
+//     }
+//     console.log(emails);
+//   })
+//   .catch((err) => {
+//     console.error("Terjadi kesalahan: ", err);
+//   });
+
+async function getEmail() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const emails = [];
+
+    const hurufBesar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const hurufKecil = "abcdefghijklmnopqrstuvwxyz";
+
+    for (let i = 0; i < data.length; i++) {
+      const email = data[i].email;
+      let emailBaru = "";
+
+      for (let j = 0; j < email.length; j++) {
+        karakter = email[j];
+
+        for (let k = 0; k < hurufBesar.length; k++) {
+          if (karakter === hurufBesar[k]) {
+            karakter = hurufKecil[k];
+            break;
+          }
+        }
+        emailBaru += karakter;
+      }
+      emails[emails.length] = emailBaru;
+    }
+    console.log(emails);
+  } catch (err) {
+    console.error("Terjadi kesalahan ", err);
+  }
+}
+getEmail();
