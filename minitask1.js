@@ -48,3 +48,7 @@ for (let i = 0; i < 3; i++) {
   hasil3[hasil3.length] = buah[i];
 }
 console.log(hasil3);
+
+const array = [1, 2];
+console.log(array.join("-"));
+console.log(array);
