@@ -157,5 +157,5 @@ Membatasi angka desimal.
 Contoh:
 ``` js
 (3.14159).toFixed(2) --> "3.14"
-(1.56472.toFixed(3)) --> "1.564"
+(1.56472).toFixed(3) --> "1.564"
 ```
