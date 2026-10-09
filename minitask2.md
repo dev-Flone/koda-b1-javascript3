@@ -86,4 +86,4 @@ Membuat array baru dari hasil transformasi elemen. Contoh: [1, 2, 3, 4].map(n =>
 Membatasi angka desimal. 
 Contoh:
 (3.14159).toFixed(2) --> "3.14"
-(1.56472.toFixed(3)) --> ""1.564"
+(1.56472.toFixed(3)) --> "1.564"
