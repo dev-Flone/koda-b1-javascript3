@@ -7,6 +7,8 @@
 
 const url = "https://jsonplaceholder.typicode.com/users";
 
+// then-catch with built-in method
+
 // fetch(url)
 //   .then((response) => {
 //     if (!response.ok) {
@@ -35,6 +37,8 @@ const url = "https://jsonplaceholder.typicode.com/users";
 //   });
 // });
 
+// async-await with built-in function
+
 // async function getEmail() {
 //   try {
 //     const response = await fetch(url);
@@ -50,6 +54,8 @@ const url = "https://jsonplaceholder.typicode.com/users";
 //   }
 // }
 // getEmail();
+
+// then-catch without built-in method
 
 // fetch(url)
 //   .then((response) => {
@@ -86,6 +92,8 @@ const url = "https://jsonplaceholder.typicode.com/users";
 //   .catch((err) => {
 //     console.error("Terjadi kesalahan: ", err);
 //   });
+
+// async-await without built-in function
 
 async function getEmail() {
   try {
